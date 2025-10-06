@@ -1,0 +1,45 @@
+@font-face {
+  font-family: "Muli";
+  src: url(../assets/font/Muli-ExtraLight.ttf);
+}
+
+.job-containers {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 50px;
+    flex-direction: row;
+    align-items: stretch;
+}
+.job-card {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  width: 280px;
+  padding: 30px;
+  text-align: left;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+.job-card h2 {
+  font-size: 30px;
+  color: #344F1F;
+}
+.job-card p {
+  font-family: "Muli";
+  font-size: 15px;
+  color: #344F1F;
+  margin: 6px 0;
+}
+.job-card button {
+  margin-top: 15px;
+  padding: 10px 25px;
+  background-color: #3a5a40;
+  color: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.job-application {
+  padding: 40px;
+  position: relative;
+}
