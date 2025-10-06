@@ -1,4 +1,5 @@
-green = rgb(52, 79, 31)
-orange = rgb(244, 153, 26)
-beige = rgb(242, 234, 211)
-light beige = rgb(249, 245, 240)
+dark green = #2e441c (footer)
+green = rgb(52, 79, 31) = #344F1F
+orange = rgb(244, 153, 26) = #F4991A
+beige = rgb(242, 234, 211) = #F2EAD3
+light beige = rgb(249, 245, 240) = #F9F5F0
