@@ -12,8 +12,8 @@
 		src: url('../assets/font/Muli-SemiBold.ttf') format('truetype');
 	}
 	@font-face {
-		font-family: 'NotoSerifDisplay';
-		src: url('..assets/font/NotoSerifDisplay_Condensed-Black.ttf') format('truetype');
+		font-family: 'PaytoneOneRegular';
+		src: url('..assets/font/PaytoneOne-Regular.ttf') format('truetype');
 	}
 
 	.footer-container {
@@ -23,10 +23,59 @@
 
 	.hellu {
 		color: white;
-		font-family: 'NotoSerifDisplay', sans-serif;
+		font-family: 'PaytoneOneRegular', sans-serif;
 		font-size: 36px;
-		padding: 20px 0 10px 70px;
-		margin: 0;
+		padding: 20px 0 20px 0;
+		border-bottom: 1px solid white;
+		margin: 0 30px;
+	}
+
+	.social-info {
+		display: flex;
+		justify-content: space-between;
+		padding: 30px 100px;
+		font-size: 24px;
+		color: white;
+	}
+
+	.social-info ul {
+		list-style: none;  
+		padding: 0;       
+		margin: 0;       
+	}
+	
+	.social-info li {
+		font-size: 17px;
+		margin: 8px 0;
+	}
+
+	.social-info li a {
+		color: white;
+		text-decoration: none;
+	}
+
+	.address {
+		display: inline-block;
+		padding-left: 45px;
+	}
+
+	.extra-info {
+		display: flex;
+		justify-content: space-between;
+		padding: 20px 30px;
+		font-size: 14px;
+		color: white;
+	}
+
+	.extra-info .jira {
+		font-size: 20px;
+		font-family: 'PaytoneOneRegular', sans-serif;
+		font-weight: bold;
+	}
+
+	.extra-info .jira a{
+		color: white;
+		text-decoration: none;
 	}
 
 </style>
@@ -55,12 +104,18 @@
 				<ul>
 					<li>Email: helluworld?@gmail.com</li>
 					<li>Phone: Phone: (+84) 70 369 5178</li>
-					<li>Add: A35 Bach Dang, Tan Son Hoa Ward, Ho Chi Minh City</li>
+					<li>
+						Address:
+						<span class="address">A35 Bach Dang,<br>
+						Tan Son Hoa Ward,<br>
+						Ho Chi Minh City</span>
+					</li>
 				</ul>
 			</div>
 		</div>
-		<div>
-			<p>© 2025 Hellu World?. All Rights Reserved<p>
+		<div class="extra-info">
+			<p class="copyright">© 2025 Hellu World?. All Rights Reserved<p>
+			<p class="jira"><a href="https://bkngoc110407.atlassian.net/jira/software/projects/SCRUM/boards/1?atlOrigin=eyJpIjoiNGNjZjE1MDkzYTYxNDEwNmI3Nzc5MjdhMzRmZGRmMjQiLCJwIjoiaiJ9" target="_blank">Jira</a></p>	
 		</div>
 	</div>
 </footer>
