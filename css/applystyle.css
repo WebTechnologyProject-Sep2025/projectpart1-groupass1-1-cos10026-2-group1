@@ -1,3 +1,9 @@
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 @font-face {
   font-family: "Muli";
   src: url(../assets/font/Muli-ExtraLight.ttf);
@@ -45,13 +51,25 @@ body {
 }
 
 .job-application {
-  padding: 40px;
-  position: relative;
-  background: rgb(249, 245, 240);
-  padding: 25px;
-  width: 900px;
-  max-width: 900px;
-  border-radius: 20px;
-  box-shadow: 0 0 15 rgb(52, 79, 31);
+  background-color: rgb(249, 245, 240);
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  width: 50%; 
+  padding: 0px 0px;
+  font-family: "Muli";
+  font-size: 15px;
+  color: #344F1F;
+  margin: 6px 0;
+  line-height: 50px;
+  border-radius: 30px;
+}
+
+.all {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 }
+
