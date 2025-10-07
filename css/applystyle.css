@@ -2,7 +2,12 @@
   font-family: "Muli";
   src: url(../assets/font/Muli-ExtraLight.ttf);
 }
-
+body {
+  background-image: url("../assets/image/_ (9).png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: auto;
+  background-attachment: fixed;
 .job-containers {
     display: flex;
     justify-content: center;
@@ -12,7 +17,7 @@
     align-items: stretch;
 }
 .job-card {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgb(249, 245, 240) ;
   border-radius: 20px;
   width: 280px;
   padding: 30px;
@@ -42,4 +47,11 @@
 .job-application {
   padding: 40px;
   position: relative;
+  background: rgb(249, 245, 240);
+  padding: 25px;
+  width: 900px;
+  max-width: 900px;
+  border-radius: 20px;
+  box-shadow: 0 0 15 rgb(52, 79, 31);
+}
 }
