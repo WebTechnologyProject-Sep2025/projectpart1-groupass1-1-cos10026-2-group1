@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Layout Test</title>
 	<link rel="stylesheet" href="../css/applystyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 	<script defer src="../controlJS/layout.js"></script>
 </head>
 <body>
@@ -39,7 +40,7 @@
                 <div class="job-application">
                     <form>
                         <div class="jobRefno">
-                        <label for="jobreferencenumber">Job Reference Number:</label>
+                        <label for="jobreferencenumber"> Job Reference Number:</label>
                         <select id="jobreferencenumber" name="jobreferencenumber" required>
                             <option value="">-- Select Job Reference --</option>
                             <option value="g01">GO1 - Sofware Developer</option> 
@@ -49,7 +50,7 @@
                         </div>
 
                         <div class="firstname">
-                        <label for="firstname">First Name:</label>
+                        <label for="firstname"><i class='fas fa-user-circle'></i> First Name:</label>
                         <input type="text" id="firstname" name="firstname" placeholder="Enter first name" maxlength="20" required>
                         </div>
 
@@ -59,24 +60,25 @@
                         </div>
 
                         <div class="DOB">
-                        <label for="DOB">Date of Birth:</label>
+                        <label for="DOB"><i class="fa-slab-press fa-regular fa-circle-info"></i> Date of Birth:</label>
                         <input type="date">
                         </div>
 
-                        <fieldset>
-                        <legend>Gender:</legend>
-                        <label><input type="radio" name="gender" value="Male" required> Male</label>
-                        <label><input type="radio" name="gender" value="Female"> Female</label>
-                        <label><input type="radio" name="gender" value="Other"> Other</label>
-                        </fieldset>
+                        <div class="Gender">
+                        <label><i class='fas fa-restroom'></i> Gender:</label><br>
+                        <label><input type="checkbox" name="gender" value="Male"> Male</label>
+                        <label><input type="checkbox" name="gender" value="Female"> Female</label>
+                        <label><input type="checkbox" name="gender" value="Others"> Others</label>
+                        <label><input type="checkbox" name="gender" value="Rather not to say"> Rather not to say</label>
+                        </div>
 
                         <div class="streetaddress">
-                        <label for="streetaddress">Street Adress:</label>
+                        <label for="streetaddress"><i class="fa-slab fa-regular fa-address-card"></i> Street Adress:</label>
                         <input type="text" id="streetaddress" name="streetaddress" placeholder="Enter street address" maxlength="40" required>
                         </div>
 
                         <div class="suburb">
-                        <label for="suburb">Suburb/town:</label>
+                        <label for="suburb"><i class='fas fa-home'></i> Suburb/town:</label>
                         <input type="text" id="suburb" name="suburb" placeholder="Enter suburb/town" maxlength="40" required>
                         </div>
 
@@ -96,24 +98,24 @@
                         </div>
 
                         <div class="email">
-                        <label for="email">Email Address:</label>
+                        <label for="email"><i class='fas fa-paper-plane'></i> Email Address:</label>
                         <input type="email" id="email" name="email" placeholder="Enter email address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
                         </div>
 
                         <div class="phone">
-                        <label for="phone">Phone Number:</label>
+                        <label for="phone"><i class='fas fa-phone'></i> Phone Number:</label>
                         <input type="text" id="phone" name="phone" pattern="^\d{8,12}$" placeholder="Enter phone number" required>
                         </div>
 
                         <div class="skills">
-                        <label>Required Technical Skills:</label><br>
+                        <label><i class='fas fa-edit'></i> Required Technical Skills:</label><br>
                         <label><input type="checkbox" name="skills[]" value="HTML"> HTML</label>
                         <label><input type="checkbox" name="skills[]" value="CSS"> CSS</label>
                         <label><input type="checkbox" name="skills[]" value="JavaScript"> JavaScript</label>
                         <label><input type="checkbox" name="skills[]" value="Python"> Python</label>
                         </div>
 
-                        <label for="otherskills">Other Skills:</label><br>
+                        <label for="otherskills"><i class='fas fa-question-circle'></i> Other Skills:</label><br>
                         <textarea id="otherskills" name="otherskills" rows="4" cols="40"></textarea><br>
                     </form>
                 </div>
