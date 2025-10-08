@@ -16,7 +16,7 @@ body {
   font-family: 'Muli', sans-serif;
   background: var(--light);
   color: var(--green);
-  line-height: 1.6;
+  line-height: 2.80;
 }
 
 .container, main, .team {
