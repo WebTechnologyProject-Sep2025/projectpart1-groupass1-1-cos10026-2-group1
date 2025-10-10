@@ -1,30 +1,41 @@
+/* FONT SETUP */
+/* Using 'Muli ' */
 @font-face {
-  font-family: 'Muli';
-  src: url('../fonts/Muli-Light.ttf') format('truetype');
+  font-family: "Muli";
+  src: url("../fonts/Muli-Light.ttf") format("truetype");
 }
 
+/* COLOR */
+/* Consistent natural palette: green (trust), orange (energy), beige (warmth) */
 :root {
-  --green: rgb(52, 79, 31);
-  --orange: rgb(244, 153, 26);
-  --beige: rgb(242, 234, 211);
-  --light: rgb(249, 245, 240);
+  --green: #344f1f;
+  --orange: #f4991a;
+  --beige: #f2ead3;
+  --light: #f9f5f0;
 }
 
+/* Reset layout across browsers */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* BASE BODY STYLE */
+/* Light background and green text for comfort and readability */
 body {
-  font-family: 'Muli', sans-serif;
+  font-family: "Muli", sans-serif;
   background: var(--light);
   color: var(--green);
-  line-height: 2.80;
+  line-height: 2.5;
 }
 
-.container, main, .team {
-  max-width: 1200px;
+/*MAIN CONTAINER*/
+/* Centers all page content and limits overall width */
+.container {
+  max-width: 1280px;
   margin: 0 auto;
   padding: 0 16px;
 }
 
+/* SECTION HEADINGS */
+/* Orange underline creates a visual hierarchy */
 h2 {
   color: var(--green);
   border-bottom: 2px solid var(--orange);
@@ -32,11 +43,14 @@ h2 {
   margin-bottom: 15px;
 }
 
+/* GROUP DETAILS CARD */
+/* Beige box with soft shadow */
 .card {
   background: var(--beige);
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   padding: 20px;
   margin-bottom: 30px;
@@ -49,26 +63,19 @@ h2 {
   border: 2px solid var(--orange);
 }
 
-.members {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  justify-content: center;
-  text-align: center;
-}
-
+/* INDIVIDUAL MEMBER CARD */
+/* Clean beige background*/
 .member-card {
   background: var(--beige);
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 20px;
   transition: 0.3s;
 }
+.member-card:hover { transform: translateY(-4px); }
 
-.member-card:hover {
-  transform: translateY(-4px);
-}
-
+/* Rounded avatar with orange border for consistency*/
 .avatar {
   width: 70px;
   height: 70px;
@@ -78,7 +85,8 @@ h2 {
   margin-bottom: 10px;
 }
 
-.profile h3 {
+/* Member name and role styling */
+.member-card h3 {
   font-size: 1rem;
   font-weight: 600;
   color: var(--green);
@@ -91,7 +99,7 @@ h2 {
   font-weight: bold;
   margin-bottom: 6px;
 }
-
+/* SKILL TAGS highlight each member’s skills */
 .tags {
   display: flex;
   flex-wrap: wrap;
@@ -107,6 +115,8 @@ h2 {
   padding: 3px 8px;
   font-size: 0.8rem;
 }
+
+/* TABLE DESIGN */
 
 .custom-table {
   width: 100%;
@@ -126,6 +136,7 @@ h2 {
   color: white;
 }
 
+/* Solid green footer with white text  */
 #lower {
   background: var(--green);
   color: white;
@@ -135,10 +146,3 @@ h2 {
   margin-top: 40px;
 }
 
-@media (max-width: 992px) {
-  .members { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 600px) {
-  .members { grid-template-columns: 1fr; }
-}
