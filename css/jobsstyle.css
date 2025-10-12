@@ -1,10 +1,8 @@
-
-
 /* Slider */
 .slider {
   position: relative;
-  height: 70vh;
-  background: url("../assets/image/Bottom up view of large green trees with sun shines th 0.png") no-repeat center center/cover;
+  height: 90vh;
+  background: url("../assets/image/green_tree.png") no-repeat center center/cover;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -91,7 +89,7 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #fffdf5;
-  padding: 40px;
+  padding: 0px;
   color: #222;
 }
 
@@ -102,7 +100,8 @@ h1 {
   font-weight: 800;
   border-bottom: 4px solid #2e7d32;
   display: inline-block;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
+  margin-top: 25px
 }
 
 /* Card layout */
@@ -112,51 +111,54 @@ h1 {
   border-radius: 6px;
   overflow: hidden;
   padding: 30px 40px;
+  align-items: stretch;
 }
 
 /* Left tabs */
 .side-tabs {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: flex-end;
-  margin-right: 25px;
+  margin-right: 55px;
+  height: 100%
 }
 
 .tab {
-  writing-mode: vertical-rl;
+  writing-mode: vertical-lr;
   transform: rotate(180deg);
   color: white;
   font-weight: bold;
-  padding: 30px 10px;
+  padding: 30px 50px;
   text-align: center;
-  font-size: 14px;
-  width: 140px;
+  font-size: 12px;
+  width: 130px;
 }
 
 /* Tab colors + rounded shapes */
 .tab1 {
-  background: #f59e0b;
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
+  background:rgb(254, 199, 123);
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
 }
 .tab2 {
-  background: #fbc371;
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
+  background: rgb(244, 153, 26);
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
 }
 .tab3 {
-  background: #f59e0b;
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
+  background: rgb(244, 153, 26);
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
 }
 
 /* Right content */
 .job-details {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 50px;
   flex: 1;
+  height: 100%
 }
 
 .row {
@@ -174,29 +176,27 @@ h1 {
 .value {
   flex: 1;
   color: #2e4724;
-  line-height: 1.6;
+  line-height: 2.5;
 }
 
-/* ========== REQUIREMENT PAGE ========== */
-.section {
-  margin-bottom: 25px;
+html {
+  scroll-behavior: smooth;
 }
 
-.section h3 {
-  font-size: 18px;
-  color: #000;
-  font-weight: 600;
-  margin-bottom: 10px;
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.section ul {
-  list-style: disc;
-  margin-left: 25px;
-  color: #2e4724;
-  line-height: 1.8;
+.text-box h2,
+.text-box p,
+.btn-learn {
+  animation: fadeInUp 1s ease-out;
 }
 
-.section a {
-  color: #2e7d32;
-  text-decoration: underline;
-}
