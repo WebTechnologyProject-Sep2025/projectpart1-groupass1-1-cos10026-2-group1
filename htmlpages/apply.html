@@ -13,118 +13,59 @@
 		<div id="upper"></div>
 
 		<main>
-            <div class="all">
-                <div class="job-containers">
-                    <div class="job-card">
-                        <h2>Network Administrator</h2>
-                        <p>Headcount: 02</p>
-                        <p>Applicant: 60</p>
-                        <button>Apply now</button>
-                    </div>
+		    <div class="job-containers">
+				<div class="job-card">
+					<h2>Network Administrator</h2>
+					<p>Headcount: 02</p>
+					<p>Applicant: 60</p>
+					<button>Apply now</button>
+				</div>
 
-                    <div class="job-card">
-                        <h2>Sofware Developer</h2>
-                        <p>Headcount: 03</p>
-                        <p>Applicant: 95</p>
-                        <button>Apply now</button>
-                    </div>
+				<div class="job-card">
+					<h2>Sofware Developer</h2>
+					<p>Headcount: 03</p>
+					<p>Applicant: 95</p>
+					<button>Apply now</button>
+				</div>
 
-                    <div class="job-card">
-                        <h2>Data Analysis</h2>
-                        <p>Headcount: 05</p>
-                        <p>Applicant: 34</p>
-                        <button>Apply now</button>
-                    </div>
-                </div>
+				<div class="job-card">
+					<h2>Data Analysis</h2>
+					<p>Headcount: 05</p>
+					<p>Applicant: 34</p>
+					<button>Apply now</button>
+				</div>
+			</div>
+				<div class="job-application">
+				<form>
+					<div class="jobRefno">
+					<label for="jobreferencenumber">Job Reference Number:</label>
+					<select id="jobreferencenumber" name="jobreferencenumber" required>
+						<option value="">-- Select Job Reference --</option>
+						<option value="g01">GO1 - Sofware Developer</option> 
+						<option value="g02">GO2 - Network Administrator</option>
+						<option value="g03">GO3 - Data Analysis</option>
+					</select>
+			</div>
+		</div>
+					<div class="firstname">
+					<label for="firstname">First Name:</label>
+					<input type="text" id="firstname" name="firstname" placeholder="Enter First Name" maxlength="20" required>
+					</div>
 
-                <div class="job-application">
-                    <form>
-                        <div class="jobRefno">
-                            <label for="jobreferencenumber"> Job Reference Number:</label>
-                                <select id="jobreferencenumber" name="jobreferencenumber" required>
-                                    <option value="">-- Select Job Reference --</option>
-                                    <option value="g01">GO1 - Sofware Developer</option> 
-                                    <option value="g02">GO2 - Network Administrator</option>
-                                    <option value="g03">GO3 - Data Analysis</option>
-                                </select>
-                        </div>
+					<div class="lastname">
+					<label for="lastname">Last Name:</label>
+					<input type="text" id="lastname" name="lastname" placeholder="Enter Last Name" maxlength="20" required>
+					</div>
 
-                        <div class="firstname">
-                            <label for="firstname"><i class='fas fa-user-circle'></i> First Name:</label>
-                            <input type="text" id="firstname" name="firstname" placeholder="Enter first name" maxlength="20" required>
-                        </div>
+					<div class="DOB">
+					<label for="DOB">Date of Birth:</label>
+					<input type="date">
+					</div>
 
-                        <div class="lastname">
-                            <label for="lastname">Last Name:</label>
-                            <input type="text" id="lastname" name="lastname" placeholder="Enter last name" maxlength="20" required>
-                        </div>
-
-                        <div class="DOB">
-                            <label for="DOB"><i class="fa-slab-press fa-regular fa-circle-info"></i> Date of Birth:</label>
-                            <input type="date">
-                        </div>
-
-                        <div class="Gender">
-                            <label><i class='fas fa-user-alt'></i> Gender:</label><br>
-                            <label><input type="checkbox" name="gender" value="Male"> Male</label>
-                            <label><input type="checkbox" name="gender" value="Female"> Female</label>
-                            <label><input type="checkbox" name="gender" value="Others"> Others</label>
-                            <label><input type="checkbox" name="gender" value="Rather not to say"> Rather not to say</label>
-                        </div>
-
-                        <div class="streetaddress">
-                            <label for="streetaddress"><i class="fa-slab fa-regular fa-address-card"></i> Street Adress:</label>
-                            <input type="text" id="streetaddress" name="streetaddress" placeholder="Enter street address" maxlength="40" required>
-                        </div>
-
-                        <div class="suburb">
-                            <label for="suburb"><i class='fas fa-home'></i> Suburb/town:</label>
-                            <input type="text" id="suburb" name="suburb" placeholder="Enter suburb/town" maxlength="40" required>
-                        </div>
-
-                        <div class="state">
-                            <label for="state">State:</label>
-                                <select id="state" name="state" required>
-                                    <option value="">-- Select State --</option>
-                                    <option value="VIC">Victoria</option> 
-                                    <option value="NSW">New South Wales</option>
-                                    <option value="QLD">Queensland</option>
-                                    <option value="NT">Nothern Territory</option>
-                                    <option value="WA">Western Australia</option>
-                                    <option value="SA">South Australia</option>
-                                    <option value="TAS">Tasmania</option>
-                                    <option value="ACT">Australia Capital Territory</option>						
-                                </select>
-                        </div>
-
-                        <div class="postcode">
-                            <label for="postcode"> Postcode:</label>
-                            <input type="text" id="firstname" name="postcode" placeholder="Enter postcode" maxlength="40" required>
-                        </div>
-
-                        <div class="email">
-                            <label for="email"><i class='fas fa-paper-plane'></i> Email Address:</label>
-                            <input type="email" id="email" name="email" placeholder="Enter email address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
-                        </div>
-
-                        <div class="phone">
-                            <label for="phone"><i class='fas fa-phone'></i> Phone Number:</label>
-                            <input type="text" id="phone" name="phone" pattern="^\d{8,12}$" placeholder="Enter phone number" required>
-                        </div>
-
-                        <div class="skills">
-                            <label><i class='fas fa-edit'></i> Required Technical Skills:</label><br>
-                            <label><input type="checkbox" name="skills[]" value="HTML"> HTML</label>
-                            <label><input type="checkbox" name="skills[]" value="CSS"> CSS</label>
-                            <label><input type="checkbox" name="skills[]" value="JavaScript"> JavaScript</label>
-                            <label><input type="checkbox" name="skills[]" value="Python"> Python</label>
-                        </div>
-
-                        <label for="otherskills"><i class='fas fa-question-circle'></i> Other Skills:</label><br>
-                            <textarea id="otherskills" name="otherskills" rows="4" cols="40"></textarea><br>
-                    </form>
-                </div>
-            </div>
+					
+				</form>
+			</div>
+			
 		</main>
 
 		<div id="lower"></div>
