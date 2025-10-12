@@ -13,7 +13,6 @@
 		<div id="upper"></div>
 
 		<main>
-            <div class="all">
                 <div class="job-containers">
                     <div class="job-card">
                         <h2>Network Administrator</h2>
@@ -65,11 +64,12 @@
                         </div>
 
                         <div class="Gender">
-                            <label><i class='fas fa-user-alt'></i> Gender:</label><br>
-                            <label><input type="checkbox" name="gender" value="Male"> Male</label>
-                            <label><input type="checkbox" name="gender" value="Female"> Female</label>
-                            <label><input type="checkbox" name="gender" value="Others"> Others</label>
-                            <label><input type="checkbox" name="gender" value="Rather not to say"> Rather not to say</label>
+                             <fieldset>
+                                <legend>Gender:</legend>
+                                <label><input type="radio" name="gender" value="Male" required> Male</label>
+                                <label><input type="radio" name="gender" value="Female"> Female</label>
+                                <label><input type="radio" name="gender" value="Other"> Other</label>
+                            </fieldset><br>
                         </div>
 
                         <div class="streetaddress">
@@ -122,9 +122,13 @@
 
                         <label for="otherskills"><i class='fas fa-question-circle'></i> Other Skills:</label><br>
                             <textarea id="otherskills" name="otherskills" rows="4" cols="40"></textarea><br>
+                        
+                        <div class="submit">
+                            <label action="/submit" method="post"></label>
+                                <input type="submit" value="Submit">
+                        </div>
                     </form>
                 </div>
-            </div>
 		</main>
 
 		<div id="lower"></div>

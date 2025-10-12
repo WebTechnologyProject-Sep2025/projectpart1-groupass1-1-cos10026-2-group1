@@ -1,15 +1,14 @@
 
-html, body {
-  margin: 0;
-  padding: 0;
-}
-
 @font-face {
   font-family: "Muli";
   src: url(../assets/font/Muli-ExtraLight.ttf);
 }
-body {
-  background-image: url("../assets/image/_ (9).png");
+html, body {
+  margin: 0;
+  padding: 0;
+}
+main {
+  background-image: url(../assets/image/apply.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: auto;
@@ -24,12 +23,11 @@ body {
     align-items: stretch;
 }
 .job-card {
-  background: rgb(249, 245, 240) ;
+  background: #F9F5F0;
   border-radius: 20px;
-  width: 280px;
+  width: 325px;
   padding: 30px;
   text-align: left;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 .job-card h2 {
   font-size: 30px;
@@ -50,50 +48,12 @@ body {
   border-radius: 10px;
   cursor: pointer;
 }
-
 .job-application {
-  background-color: rgb(249, 245, 240);
+  background: #F9F5F0;
   display: flex; 
   justify-content: center; 
   align-items: center;
-  width: 50%; 
-  padding: 0px 0px;
   font-family: "Muli";
   font-size: 15px;
   color: #344F1F;
-  margin: 6px 0;
-  line-height: 50px;
-  border-radius: 30px;
-}
-
-form-row {
-  display: flex;
-  gap: 20px;
-  align-items: flex-end;
-  .state, .postcode {
-    flex: 1;
-  }
-}
-
-.all {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-#jobreferencenumber {
-  color: #1e4d2b;
-  border: 1px;
-  padding: 5px 10px;
-  font-size: 10px;
-  font-family: "Muli";
-}
-
-#state {
-  color: #1e4d2b;
-  border: 1px;
-  padding: 5px 10px;
-  font-size: 10px;
-  font-family: "Muli";
 }
