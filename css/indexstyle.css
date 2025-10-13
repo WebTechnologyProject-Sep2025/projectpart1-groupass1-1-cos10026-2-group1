@@ -150,7 +150,7 @@ body, html {
 
 .section3 {
 	min-height: 100vh;
-	background-image: url('../assets/image/aesthetic.png');
+	background-image: url('../assets/image/index2.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -184,7 +184,7 @@ body, html {
 	text-align: center;
 	justify-content: flex-start;
 	min-height: 100vh;
-	background-image: url('../assets/image/_.png');
+	background-image: url('../assets/image/index3.jpg');
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -368,7 +368,7 @@ body, html {
 	width: 100%;
 	max-width: auto;
 	height: 16.7vw;
-	background-image: url("../assets/image/_ (8).png");
+	background-image: url("../assets/image/index4.jpg");
 	background-size: cover;
 	background-position: center;
 	overflow: hidden;
