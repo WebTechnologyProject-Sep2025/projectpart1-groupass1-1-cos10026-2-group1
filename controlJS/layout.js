@@ -79,3 +79,33 @@ const observer2 = new IntersectionObserver((entries) => {
 
 observer2.observe(section2);
 
+const cards = document.querySelectorAll('.card');
+const leftBtn = document.querySelector('.nav-btn.left');
+const rightBtn = document.querySelector('.nav-btn.right');
+let current = 0;
+
+function updateCarousel() {
+  cards.forEach((card, i) => {
+    card.classList.remove('active', 'left', 'right');
+  });
+
+  const prev = (current - 1 + cards.length) % cards.length;
+  const next = (current + 1) % cards.length;
+
+  cards[prev].classList.add('left');
+  cards[current].classList.add('active');
+  cards[next].classList.add('right');
+}
+
+rightBtn.addEventListener('click', () => {
+  current = (current + 1) % cards.length;
+  updateCarousel();
+});
+
+leftBtn.addEventListener('click', () => {
+  current = (current - 1 + cards.length) % cards.length;
+  updateCarousel();
+});
+
+updateCarousel(); // initialize
+

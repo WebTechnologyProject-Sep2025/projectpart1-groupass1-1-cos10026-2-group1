@@ -1,202 +1,168 @@
-
-
-/* Slider */
-.slider {
-  position: relative;
-  height: 70vh;
-  background: url("../assets/image/Bottom up view of large green trees with sun shines th 0.png") no-repeat center center/cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 5dvh;
-  color: white;
-}
-
-/* Arrows */
-.arrow {
-  font-size: 40px;
-  color: white;
-  cursor: pointer;
-  user-select: none;
-  padding: 10px;
-}
-
-.arrow.left {
-  position: absolute;
-  left: 20px;
-}
-
-.arrow.right {
-  position: absolute;
-  right: 20px;
-}
-
-/* Slide content */
-.slide-content {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  padding: 30px;
-  border-radius: 15px;
-}
-
-.card {
-  background: rgba(255, 255, 255, 0.6);
-  padding: 10px;
-  border-radius: 15px;
-}
-
-.card img {
-  width: 400px;
-  height: auto;
-  border-radius: 5px;
-}
-
-.text-box {
-  max-width: 900px;
-}
-
-.text-box h2 {
-  font-size: 60px;
-  margin-bottom: 15px;
-}
-
-.text-box p {
-  font-size: 25px;
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-.btn-learn {
-  display: inline-block;
-  background: #f59e0b;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 20px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.btn-learn:hover {
-  background: #d97706;
-}
-
-/* Reset */
+/* ======== RESET ======== */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Arial, sans-serif;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: #fffdf5;
-  padding: 40px;
-  color: #222;
+	background: #F9F5F0;
+	color: #222;
 }
 
-/* Header */
-h1 {
-  color: #2e7d32;
-  font-size: 32px;
-  font-weight: 800;
-  border-bottom: 4px solid #2e7d32;
-  display: inline-block;
-  margin-bottom: 25px;
+/* ======== SLIDER ======== */
+.slider {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 90vh;
+	background: url("../assets/image/green_tree.png") center/cover no-repeat;
+	color: white;
+	overflow: hidden;
 }
 
-/* Card layout */
+.arrow {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 48px;
+	color: white;
+	cursor: pointer;
+	padding: 10px;
+	transition: transform 0.25s;
+	user-select: none;
+}
+
+.arrow:hover {
+	transform: translateY(-50%) scale(1.2);
+}
+
+.arrow.left { left: 30px; }
+.arrow.right { right: 30px; }
+
+.slide-content {
+	display: flex;
+	align-items: center;
+	gap: 40px;
+	padding: 40px;
+	background: rgba(255, 255, 255, 0.25);
+	border-radius: 20px;
+	backdrop-filter: blur(8px);
+}
+
+.card img {
+	width: 380px;
+	border-radius: 15px;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.text-box {
+	max-width: 600px;
+}
+
+.text-box h2 {
+	font-size: 50px;
+	margin-bottom: 15px;
+	text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+.text-box p {
+	font-size: 20px;
+	line-height: 1.6;
+	margin-bottom: 20px;
+	color: #F2EAD3;
+}
+
+.btn-learn {
+	display: inline-block;
+	background: #F4991A;
+	color: white;
+	padding: 12px 25px;
+	border-radius: 30px;
+	font-weight: bold;
+	text-decoration: none;
+	transition: background 0.3s;
+}
+
+.btn-learn:hover { background: #2E441C; }
+
+/* ======== JOB DETAILS ======== */
+.job-section {
+	padding: 60px 10%;
+	text-align: left;
+}
+
+.job-section h1 {
+	font-size: 36px;
+	color: #344F1F;
+	border-bottom: 4px solid #344F1F;
+	display: inline-block;
+	margin-bottom: 25px;
+}
+
 .job-card {
-  display: flex;
-  background-color: #faf6e7;
-  border-radius: 6px;
-  overflow: hidden;
-  padding: 30px 40px;
+	display: flex;
+	gap: 40px;
+	background: #FAF6E7;
+	border-radius: 15px;
+	padding: 40px;
+	box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
-/* Left tabs */
 .side-tabs {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-end;
-  margin-right: 25px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	gap: 20px;
 }
 
 .tab {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  color: white;
-  font-weight: bold;
-  padding: 30px 10px;
-  text-align: center;
-  font-size: 14px;
-  width: 140px;
+	writing-mode: vertical-lr;
+	transform: rotate(180deg);
+	background: #F4991A;
+	color: white;
+	padding: 25px 45px;
+	border-top-right-radius: 100px;
+	border-bottom-right-radius: 100px;
+	cursor: pointer;
+	font-weight: bold;
+	transition: background 0.3s, letter-spacing 0.3s;
 }
 
-/* Tab colors + rounded shapes */
-.tab1 {
-  background: #f59e0b;
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
-}
-.tab2 {
-  background: #fbc371;
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
-}
-.tab3 {
-  background: #f59e0b;
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
+.tab.active,
+.tab:hover {
+	background: #2E441C;
+	letter-spacing: 1px;
 }
 
-/* Right content */
 .job-details {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  flex: 1;
+	flex: 1;
+	color: #2E4724;
+	font-size: 18px;
+	line-height: 1.9;
+	animation: fadeIn 0.4s ease;
 }
 
-.row {
-  display: flex;
-  align-items: flex-start;
-  gap: 25px;
+@keyframes fadeIn {
+	from { opacity: 0; transform: translateY(20px); }
+	to { opacity: 1; transform: translateY(0); }
 }
 
-.label {
-  font-weight: bold;
-  width: 180px;
-  color: #000;
-}
-
-.value {
-  flex: 1;
-  color: #2e4724;
-  line-height: 1.6;
-}
-
-/* ========== REQUIREMENT PAGE ========== */
-.section {
-  margin-bottom: 25px;
-}
-
-.section h3 {
-  font-size: 18px;
-  color: #000;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.section ul {
-  list-style: disc;
-  margin-left: 25px;
-  color: #2e4724;
-  line-height: 1.8;
-}
-
-.section a {
-  color: #2e7d32;
-  text-decoration: underline;
+/* ======== RESPONSIVE ======== */
+@media (max-width: 800px) {
+	.slide-content { flex-direction: column; text-align: center; }
+	.card img { width: 90%; }
+	.job-card { flex-direction: column; align-items: center; }
+	.side-tabs {
+		flex-direction: row;
+		justify-content: center;
+	}
+	.tab {
+		writing-mode: horizontal-tb;
+		transform: none;
+		padding: 10px 20px;
+		border-radius: 50px;
+	}
 }
