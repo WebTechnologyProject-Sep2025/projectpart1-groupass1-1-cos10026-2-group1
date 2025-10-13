@@ -16,9 +16,9 @@
 		<main>
 			<!-- ======== SLIDER ======== -->
 			<section class="slider">
-				<div class="arrow left">&#10094;</div>
+				<div class="arrow left" aria-label="Previous">&#10094;</div>
 
-				<div class="slide-content">
+				<div class="slide-content" aria-live="polite">
 					<div class="card">
 						<img id="job-img" src="../assets/image/software-engr.png" alt="Job Image">
 					</div>
@@ -32,7 +32,7 @@
 					</div>
 				</div>
 
-				<div class="arrow right">&#10095;</div>
+				<div class="arrow right" aria-label="Next">&#10095;</div>
 			</section>
 
 			<!-- ======== DETAILS ======== -->
@@ -40,10 +40,10 @@
 				<h1 id="job-title-main">Software Developer</h1>
 
 				<div class="job-card">
-					<div class="side-tabs">
-						<div class="tab tab1 active">Description</div>
-						<div class="tab tab2">Requirement</div>
-						<div class="tab tab3">Responsibilities</div>
+					<div class="side-tabs" role="tablist" aria-label="Job details tabs">
+						<button class="tab tab1 active" role="tab" aria-selected="true">Description</button>
+						<button class="tab tab2" role="tab" aria-selected="false">Requirement</button>
+						<button class="tab tab3" role="tab" aria-selected="false">Responsibilities</button>
 					</div>
 
 					<div class="job-details" id="job-details">
