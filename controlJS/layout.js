@@ -108,3 +108,4 @@ leftBtn.addEventListener('click', () => {
 });
 
 updateCarousel(); // initialize
+
