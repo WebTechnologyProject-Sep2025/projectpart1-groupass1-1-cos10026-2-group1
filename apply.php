@@ -10,6 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $state = htmlspecialchars($_POST['state'] ?? "Not selected"); 
     $email = htmlspecialchars($_POST['email']);
     $phone = htmlspecialchars($_POST['phone']);
+    $position = htmlspecialchars($_POST['position'] ?? "Not Selected");
     $skills = $_POST['skills'] ?? [];
     $other_skills = htmlspecialchars($_POST['other-skills']);
 
