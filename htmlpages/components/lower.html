@@ -13,7 +13,7 @@
 	}
 	@font-face {
 		font-family: 'PaytoneOneRegular';
-		src: url('..assets/font/PaytoneOne-Regular.ttf') format('truetype');
+		src: url('../assets/font/PaytoneOne-Regular.ttf') format('truetype');
 	}
 
 	.footer-container {
@@ -38,11 +38,11 @@
 	}
 
 	.social-info ul {
-		list-style: none;  
-		padding: 0;       
-		margin: 0;       
+		list-style: none;
+		padding: 0;
+		margin: 0;
 	}
-	
+
 	.social-info li {
 		font-size: clamp(14px, 0.89vw, 18px);
 		margin: 0.42vw 0;
@@ -61,22 +61,33 @@
 	.extra-info {
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
 		padding: 1.04vw 1.56vw;
 		font-size: clamp(12px, 0.73vw, 16px);
 		color: white;
 	}
 
-	.extra-info .jira {
+	.extra-info .links {
+		display: flex;
+		gap: 1.56vw; /* space between Jira and GitHub */
+		align-items: center;
+	}
+
+	.extra-info .links a {
+		color: white;
+		text-decoration: none;
 		font-size: clamp(16px, 1.04vw, 20px);
 		font-family: 'PaytoneOneRegular', sans-serif;
 		font-weight: bold;
+		display: flex;
+		align-items: center;
+		gap: 0.52vw;
+		transition: color 0.3s ease;
 	}
 
-	.extra-info .jira a {
-		color: white;
-		text-decoration: none;
+	.extra-info .links a:hover {
+		color: rgb(244, 153, 26); /* hover color: orange */
 	}
-
 </style>
 
 <footer>
@@ -92,17 +103,19 @@
 					<li><a href="apply.html">Application</a></li>
 				</ul>
 			</div>
+
 			<div>
 				<p>Our Company</p>
 				<ul>
 					<li><a href="about.html">About Us</a></li>
-				<ul>
+				</ul>
 			</div>
+
 			<div>
 				<p>Contact Via</p>
 				<ul>
 					<li>Email: helluworld?@gmail.com</li>
-					<li>Phone: Phone: (+84) 70 369 5178</li>
+					<li>Phone: (+84) 70 369 5178</li>
 					<li>
 						Address:
 						<span class="address">A35 Bach Dang,<br>
@@ -112,9 +125,18 @@
 				</ul>
 			</div>
 		</div>
+
 		<div class="extra-info">
-			<p class="copyright">© 2025 Hellu World?. All Rights Reserved<p>
-			<p class="jira"><a href="https://bkngoc110407.atlassian.net/jira/software/projects/SCRUM/boards/1?atlOrigin=eyJpIjoiNGNjZjE1MDkzYTYxNDEwNmI3Nzc5MjdhMzRmZGRmMjQiLCJwIjoiaiJ9" target="_blank">Jira</a></p>	
+			<p class="copyright">© 2025 Hellu World?. All Rights Reserved</p>
+			<div class="links">
+				<a href="https://bkngoc110407.atlassian.net/jira/software/projects/SCRUM/boards/1?atlOrigin=eyJpIjoiNGNjZjE1MDkzYTYxNDEwNmI3Nzc5MjdhMzRmZGRmMjQiLCJwIjoiaiJ9" target="_blank">
+					<i class="fa-brands fa-jira"></i> Jira
+				</a>
+				<a href="https://github.com/WebTechnologyProject-Sep2025/projectpart1-groupass1-1-cos10026-2-group1.git" target="_blank">
+					<i class="fa-brands fa-github"></i> GitHub
+				</a>
+			</div>
 		</div>
 	</div>
 </footer>
+

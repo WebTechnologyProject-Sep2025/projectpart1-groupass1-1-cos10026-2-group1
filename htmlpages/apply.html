@@ -6,13 +6,53 @@
 	<link rel="stylesheet" href="../css/applystyle.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 	<script defer src="../controlJS/layout.js"></script>
+
+	<style>
+		/* Highlight animation when scrolled */
+		.job-application.highlight {
+			box-shadow: 0 0 25px rgba(52, 79, 31, 0.6);
+			transition: box-shadow 0.8s ease-in-out;
+		}
+	</style>
+
+	<script defer>
+		document.addEventListener("DOMContentLoaded", () => {
+			const applyButtons = document.querySelectorAll(".job-card button");
+			const jobSelect = document.getElementById("jobreferencenumber");
+			const formSection = document.querySelector(".job-application");
+
+			const jobMap = {
+				"Network Administrator": "g02",
+				"Software Developer": "g01",
+				"Data Analysis": "g03"
+			};
+
+			applyButtons.forEach(button => {
+				button.addEventListener("click", (e) => {
+					const jobTitle = e.target.parentElement.querySelector("h2").textContent.trim();
+					const jobValue = jobMap[jobTitle];
+
+					// Auto-fill dropdown
+					if (jobSelect && jobValue) jobSelect.value = jobValue;
+
+					// Smooth scroll
+					formSection.scrollIntoView({ behavior: "smooth", block: "start" });
+
+					// Highlight the form
+					formSection.classList.add("highlight");
+					setTimeout(() => formSection.classList.remove("highlight"), 1000);
+				});
+			});
+		});
+	</script>
 </head>
+
 <body>
 	<div class="container">
-
 		<div id="upper"></div>
 
 		<main>
+			<!-- ===== JOB CARDS ===== -->
 			<div class="job-containers">
 				<div class="job-card">
 					<h2>Network Administrator</h2>
@@ -36,7 +76,7 @@
 				</div>
 			</div>
 
-			<!--Application form-->
+			<!-- ===== APPLICATION FORM ===== -->
 			<div class="form">
 				<div class="job-application">
 					<form action="../apply.php" method="post">
@@ -117,21 +157,18 @@
 						<div class="skills">
 							<label><i class='fas fa-edit'></i> Required Technical Skills:</label>
 
-							<!--Network Administrator requirements-->
 							<label for="network-admin" class="job">Network Administrator</label>
 							<label class="req"><input type="checkbox" name="skills[]" value="Networking protocols"> Networking protocols (TCP/IP, DNS, DHCP)</label>
 							<label class="req"><input type="checkbox" name="skills[]" value="Troubleshooting"> Troubleshooting</label>
 							<label class="req"><input type="checkbox" name="skills[]" value="Security management"> Security management</label>
 							<label class="req"><input type="checkbox" name="skills[]" value="System administration"> System administration</label>
 
-							<!--Software Developer requirements-->
 							<label for="software-dev" class="job">Software Developer</label>
 							<label class="req"><input type="checkbox" name="skills[]" value="Data analysis & visualization"> Data analysis & visualization</label>
 							<label class="req"><input type="checkbox" name="skills[]" value="Statistical knowledge"> Statistical knowledge</label>
 							<label class="req"><input type="checkbox" name="skills[]" value="Critical thinking"> Critical thinking</label>
 							<label class="req"><input type="checkbox" name="skills[]" value="Communication skills"> Communication skills</label>
 
-							<!--Data Analysis requirements-->
 							<label for="data-analysis" class="job">Data Analysis</label>
 							<label class="req"><input type="checkbox" name="skills[]" value="Programming proficiency"> Programming proficiency</label>
 							<label class="req"><input type="checkbox" name="skills[]" value="Knowledge of frameworks"> Knowledge of frameworks</label>
@@ -152,7 +189,6 @@
 		</main>
 
 		<div id="lower"></div>
-
 	</div>
 </body>
 </html>
