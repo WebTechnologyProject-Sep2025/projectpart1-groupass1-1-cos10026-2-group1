@@ -13,8 +13,14 @@
 }
 
 body, html {
-	padding: 0;
 	margin: 0;
+  	padding: 0;
+  	box-sizing: border-box;
+  	width: 100%;
+  	height: 100%;
+  	background-color: #fafafa;   /* use your site’s background color */
+  	overflow-x: hidden;          /* prevent horizontal scroll bars */
+  	font-family: Arial, sans-serif;
 }
 
 .section1 {
@@ -426,3 +432,22 @@ body, html {
 	transform: translateY(-0.16vw);
 }
 
+/* ===== Container Setup ===== */
+.container {
+  width: 100%;                 /* fill the full screen width on desktops */
+  max-width: 100%;             /* no artificial limit */
+  margin: 0;                   /* no gaps on edges */
+  padding: 0;                  /* no inner spacing unless you add later */
+  box-sizing: border-box;      /* keeps layout predictable */
+  background: inherit;         /* matches the body background */
+  box-shadow: none;            /* remove any outline/shadow */
+  overflow-x: hidden;          /* just in case Safari adds scroll bars */
+}
+
+/* ===== Responsive Safety (phones/tablets) ===== */
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 0 10px;           /* small side padding so content isn’t touching screen edge */
+  }
+}

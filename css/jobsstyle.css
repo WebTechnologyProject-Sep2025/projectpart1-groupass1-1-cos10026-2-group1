@@ -264,3 +264,23 @@ body {
 		animation: none !important;
 	}
 }
+
+/* ===== Container Setup ===== */
+.container {
+  width: 100%;                 /* fill the full screen width on desktops */
+  max-width: 100%;             /* no artificial limit */
+  margin: 0;                   /* no gaps on edges */
+  padding: 0;                  /* no inner spacing unless you add later */
+  box-sizing: border-box;      /* keeps layout predictable */
+  background: inherit;         /* matches the body background */
+  box-shadow: none;            /* remove any outline/shadow */
+  overflow-x: hidden;          /* just in case Safari adds scroll bars */
+}
+
+/* ===== Responsive Safety (phones/tablets) ===== */
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 0 10px;           /* small side padding so content isn’t touching screen edge */
+  }
+}
