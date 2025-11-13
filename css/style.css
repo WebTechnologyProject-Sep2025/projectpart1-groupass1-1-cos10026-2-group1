@@ -1067,304 +1067,215 @@
   }
 }
 
-/* ================================================
-   JOBS PAGE
-   ================================================ */
-
-/* ======== RESET ======== */
-#jobs-page *,
-#jobs-page *::before,
-#jobs-page *::after {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+/* =======================================
+   GLOBAL RESET
+   ======================================= */
+#jobs-page main *,
+#jobs-page main *::before,
+#jobs-page main *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-#jobs-page html { -webkit-text-size-adjust: 100%; }
-
-#jobs-page body {
+#jobs-page {
 	background: #F9F5F0;
-	color: #222;
 	font-family: Arial, sans-serif;
+	color: #222;
 }
 
-/* ======== SLIDER ======== */
+#jobs-page .container {
+	width: 100%;
+}
+
+/* =======================================
+   HIDE RADIO BUTTONS
+   ======================================= */
+#jobs-page input[type="radio"] {
+	display: none;
+}
+
+/* =======================================
+   SLIDER – CSS ONLY
+   ======================================= */
 #jobs-page .slider {
 	position: relative;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	min-height: 90svh;
-	background: url("../assets/image/job.jpg") center / cover no-repeat;
-	color: #fff;
+	min-height: 90vh;
+	background: url("../assets/image/job.jpg") center/cover no-repeat;
 	overflow: hidden;
 }
 
-/* --- Arrows --- */
+/* Slides wrapper */
+/* FIXED SLIDER GEOMETRY */
+#jobs-page .slides {
+	position: relative;
+	width: 80%;
+	max-width: 1100px;
+	height: 450px; /* Makes all slides have a consistent area */
+	margin: 0 auto;
+}
+
+/* Stack all slides on top of each other */
+#jobs-page .slide {
+	position: absolute;
+	inset: 0; /* top:0, left:0, right:0, bottom:0 */
+	display: flex;
+	justify-content: center;   /* centers horizontally */
+	align-items: center;       /* centers vertically */
+	gap: 40px;
+	color: #fff;
+
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.6s ease;
+}
+
+/* Make active slide visible */
+#jobs-page #slide1:checked ~ .slider .slides .slide:nth-of-type(1),
+#jobs-page #slide2:checked ~ .slider .slides .slide:nth-of-type(2),
+#jobs-page #slide3:checked ~ .slider .slides .slide:nth-of-type(3) {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+/* Nicely center the image on smaller screens */
+@media (max-width: 800px) {
+	#jobs-page .slide {
+		flex-direction: column;
+		text-align: center;
+		gap: 20px;
+	}
+}
+
+/* =======================================
+   SLIDER ARROWS
+   ======================================= */
 #jobs-page .arrow {
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
-	font-size: clamp(28px, 3.33vw, 56px);
-	color: #fff;
+	font-size: 50px;
+	color: white;
 	cursor: pointer;
 	padding: 10px;
-	transition: transform 0.25s ease, opacity 0.25s ease;
 	user-select: none;
+	z-index: 10;
 	opacity: 0.85;
-	inline-size: max(44px, 3.5ch);
-	block-size: max(44px, 3.5ch);
-	display: grid;
-	place-items: center;
+	display: none; /* hidden until correct slide is active */
 }
 
 #jobs-page .arrow:hover {
-	transform: translateY(-50%) scale(1.12);
 	opacity: 1;
 }
 
-#jobs-page .arrow.left { left: 30px; }
-#jobs-page .arrow.right { right: 30px; }
+#jobs-page .left { left: 20px; }
+#jobs-page .right { right: 20px; }
 
-/* --- Slide content --- */
-#jobs-page .slide-content {
-	position: relative;
-	display: flex;
-	align-items: center;
-	gap: clamp(16px, 2.5vw, 40px);
-	padding: clamp(16px, 2.8vw, 40px);
-	border-radius: 20px;
-	background: rgba(255, 255, 255, 0.08);
-	overflow: hidden;
-	isolation: isolate;
-	will-change: transform, opacity;
-	transition: transform 0.8s cubic-bezier(0.25, 1, 0.3, 1),
-	            opacity 0.8s cubic-bezier(0.25, 1, 0.3, 1);
-}
+/* Display correct arrows depending on checked slide */
+#jobs-page #slide1:checked ~ .slider .s1 { display: block; }
+#jobs-page #slide2:checked ~ .slider .s2 { display: block; }
+#jobs-page #slide3:checked ~ .slider .s3 { display: block; }
 
-#jobs-page .slide-content::before { display: none !important; }
-
-/* --- Blur only behind the image block --- */
-#jobs-page .card {
-	position: relative;
-	z-index: 1;
-}
-
-#jobs-page .card::before {
-	content: "";
-	position: absolute;
-	inset: -12px -12px -12px -24px;
-	border-radius: 18px;
-	background: rgba(255, 255, 255, 0.22);
-	backdrop-filter: blur(8px);
-	-webkit-backdrop-filter: blur(8px);
-	z-index: -1;
-	pointer-events: none;
-}
-
+/* =======================================
+   SLIDE CONTENT
+   ======================================= */
 #jobs-page .card img {
-	width: clamp(240px, 26.39vw, 520px);
-	max-width: 100%;
-	height: auto;
+	width: 300px;
 	border-radius: 15px;
-	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-	transition: transform 1s cubic-bezier(0.25, 1, 0.3, 1);
-	display: block;
-}
-
-#jobs-page .card img:hover { transform: scale(1.03); }
-
-#jobs-page .text-box { position: relative; z-index: 2; }
-
-/* --- Slide animation states --- */
-#jobs-page .slide-content.enter {
-	opacity: 0;
-	transform: translateX(3vw);
-}
-#jobs-page .slide-content.enter-active {
-	opacity: 1;
-	transform: translateX(0);
-}
-#jobs-page .slide-content.exit {
-	opacity: 1;
-	transform: translateX(0);
-}
-#jobs-page .slide-content.exit-active {
-	opacity: 0;
-	transform: translateX(-3vw);
-}
-
-/* --- Text section --- */
-#jobs-page .text-box {
-	max-width: min(600px, 41.67vw);
 }
 
 #jobs-page .text-box h2 {
-	font-size: clamp(28px, 3.47vw, 54px);
+	font-size: 40px;
 	margin-bottom: 15px;
-	text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 #jobs-page .text-box p {
-	font-size: clamp(14px, 1.39vw, 20px);
-	line-height: 1.6;
+	font-size: 18px;
+	max-width: 450px;
 	margin-bottom: 20px;
-	color: #F2EAD3;
 }
 
 #jobs-page .btn-learn {
-	display: inline-block;
 	background: #F4991A;
 	color: #fff;
-	padding: 12px 25px;
+	padding: 10px 25px;
 	border-radius: 30px;
-	font-weight: 700;
 	text-decoration: none;
-	transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
-	box-shadow: 0 6px 16px rgba(244, 153, 26, 0.35);
-	will-change: transform;
+	font-weight: bold;
 }
 
-#jobs-page .btn-learn:hover {
-	background: #2E441C;
-	transform: translateY(-2px);
-	box-shadow: 0 10px 22px rgba(46, 68, 28, 0.35);
-}
-
-/* ======== JOB DETAILS ======== */
+/* =======================================
+   JOB DETAILS (CSS TABS)
+   ======================================= */
 #jobs-page .job-section {
-	padding: clamp(24px, 4.17vw, 56px) 10%;
-	text-align: left;
+	padding: 40px 10%;
 }
 
 #jobs-page .job-section h1 {
-	font-size: clamp(24px, 2.5vw, 40px);
-	color: #344F1F;
+	margin-bottom: 20px;
+	font-size: 30px;
 	border-bottom: 4px solid #344F1F;
 	display: inline-block;
-	margin-bottom: 25px;
 }
 
-/* --- Job card layout --- */
 #jobs-page .job-card {
-	display: flex;
-	gap: clamp(16px, 2.78vw, 40px);
 	background: #FAF6E7;
+	padding: 30px;
 	border-radius: 15px;
-	padding: clamp(16px, 2.78vw, 40px);
-	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-	overflow: hidden;
+	display: flex;
+	gap: 30px;
 }
 
-/* --- Side tabs --- */
+/* Tab buttons */
 #jobs-page .side-tabs {
 	display: flex;
 	flex-direction: column;
-	align-items: flex-end;
-	gap: clamp(10px, 1.39vw, 20px);
+	gap: 20px;
 }
 
 #jobs-page .tab {
-	writing-mode: vertical-lr;
-	transform: rotate(180deg);
 	background: #F4991A;
-	color: #fff;
-	padding: clamp(12px, 1.2vw, 18px) clamp(24px, 3.13vw, 48px);
-	border-top-right-radius: 100px;
-	border-bottom-right-radius: 100px;
+	color: white;
+	padding: 10px 25px;
+	border-radius: 50px;
 	cursor: pointer;
-	font-weight: 700;
-	transition: background 0.3s, letter-spacing 0.3s, transform 0.2s;
-	white-space: nowrap;
-	user-select: none;
-	border: none;
+	font-weight: bold;
 }
 
-#jobs-page .tab.active,
 #jobs-page .tab:hover {
 	background: #2E441C;
-	letter-spacing: 0.5px;
 }
 
-#jobs-page .tab:focus-visible {
-	outline: 3px solid #2E441C;
-}
-
-/* --- Job details text --- */
+/* Panels container */
 #jobs-page .job-details {
-	flex: 1 1 auto;
-	min-width: 0;
-	color: #2E4724;
-	font-size: clamp(14px, 1.25vw, 18px);
-	line-height: 1.9;
-	animation: fadeIn 0.4s ease;
+	flex: 1;
 }
 
-@keyframes fadeIn {
-	from { opacity: 0; transform: translateY(14px); }
-	to { opacity: 1; transform: translateY(0); }
+/* Panels hidden by default */
+#jobs-page .panel {
+	display: none;
 }
 
-/* ======== RESPONSIVE ======== */
-@media (max-width: 800px) {
-	#jobs-page .slide-content {
-		flex-direction: column;
-		text-align: center;
-		padding: 4vw;
-	}
-	#jobs-page .card::before {
-		inset: -10px;
-	}
-	#jobs-page .card img {
-		width: 85%;
-		margin-bottom: 3vw;
-	}
-	#jobs-page .job-card {
-		flex-direction: column;
-		align-items: center;
-	}
-	#jobs-page .side-tabs {
-		flex-direction: row;
-		justify-content: center;
-		align-items: center;
-	}
-	#jobs-page .tab {
-		writing-mode: horizontal-tb;
-		transform: none;
-		padding: 10px 20px;
-		border-radius: 50px;
-	}
+/* SOFTWARE DEV TABS */
+#jobs-page #s1tab1:checked ~ .job-card .job-details .panel:nth-child(1),
+#jobs-page #s1tab2:checked ~ .job-card .job-details .panel:nth-child(2),
+#jobs-page #s1tab3:checked ~ .job-card .job-details .panel:nth-child(3),
+
+/* NETWORK ADMIN */
+#jobs-page #s2tab1:checked ~ .job-card .job-details .panel:nth-child(1),
+#jobs-page #s2tab2:checked ~ .job-card .job-details .panel:nth-child(2),
+#jobs-page #s2tab3:checked ~ .job-card .job-details .panel:nth-child(3),
+
+/* DATA ANALYST */
+#jobs-page #s3tab1:checked ~ .job-card .job-details .panel:nth-child(1),
+#jobs-page #s3tab2:checked ~ .job-card .job-details .panel:nth-child(2),
+#jobs-page #s3tab3:checked ~ .job-card .job-details .panel:nth-child(3) {
+	display: block;
 }
 
-/* accessibility: reduced motion */
-@media (prefers-reduced-motion: reduce) {
-	#jobs-page .slide-content,
-	#jobs-page .btn-learn,
-	#jobs-page .job-details {
-		transition: none !important;
-		animation: none !important;
-	}
-}
-
-/* ===== Container Setup ===== */
-#jobs-page .container {
-  width: 100%;
-  max-width: 100%;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background: inherit;
-  box-shadow: none;
-  overflow-x: hidden;
-}
-
-/* ===== Responsive Safety ===== */
-@media (max-width: 768px) {
-  #jobs-page .container {
-    width: 100%;
-    padding: 0 10px;
-  }
-}
 
 /* ======== GLOBAL RESET (applies to all pages) ======== */
 html, body {
