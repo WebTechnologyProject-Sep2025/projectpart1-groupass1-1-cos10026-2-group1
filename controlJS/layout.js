@@ -18,8 +18,8 @@ function loadComponent(id, file) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-	loadComponent("upper", "components/upper.html");
-	loadComponent("lower", "components/lower.html");
+	loadComponent("upper", "upper.html");
+	loadComponent("lower", "lower.html");
 });
 
 const options = {

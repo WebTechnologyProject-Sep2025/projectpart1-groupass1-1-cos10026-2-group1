@@ -1,0 +1,142 @@
+<style>
+	@font-face {
+		font-family: 'MuliBold';
+		src: url('../assets/font/Muli-Bold.ttf') format('truetype');
+	}
+	@font-face {
+		font-family: 'MuliLight';
+		src: url('../assets/font/Muli-Light.ttf') format('truetype');
+	}
+	@font-face {
+		font-family: 'MuliSemiBold';
+		src: url('../assets/font/Muli-SemiBold.ttf') format('truetype');
+	}
+	@font-face {
+		font-family: 'PaytoneOneRegular';
+		src: url('../assets/font/PaytoneOne-Regular.ttf') format('truetype');
+	}
+
+	.footer-container {
+		background-color: rgb(52, 79, 31);
+	}
+
+	.hellu {
+		color: white;
+		font-family: 'PaytoneOneRegular', sans-serif;
+		font-size: clamp(20px, 1.88vw, 36px);
+		padding: 1.04vw 0 1.04vw 0;
+		border-bottom: 0.05vw solid white;
+		margin: 0 1.56vw;
+	}
+
+	.social-info {
+		display: flex;
+		justify-content: space-between;
+		padding: 1.56vw 5.21vw;
+		font-size: clamp(18px, 1.25vw, 24px);
+		color: white;
+	}
+
+	.social-info ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.social-info li {
+		font-size: clamp(14px, 0.89vw, 18px);
+		margin: 0.42vw 0;
+	}
+
+	.social-info li a {
+		color: white;
+		text-decoration: none;
+	}
+
+	.address {
+		display: inline-block;
+		padding-left: 2.34vw;
+	}
+
+	.extra-info {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 1.04vw 1.56vw;
+		font-size: clamp(12px, 0.73vw, 16px);
+		color: white;
+	}
+
+	.extra-info .links {
+		display: flex;
+		gap: 1.56vw; /* space between Jira and GitHub */
+		align-items: center;
+	}
+
+	.extra-info .links a {
+		color: white;
+		text-decoration: none;
+		font-size: clamp(16px, 1.04vw, 20px);
+		font-family: 'PaytoneOneRegular', sans-serif;
+		font-weight: bold;
+		display: flex;
+		align-items: center;
+		gap: 0.52vw;
+		transition: color 0.3s ease;
+	}
+
+	.extra-info .links a:hover {
+		color: rgb(244, 153, 26); /* hover color: orange */
+	}
+</style>
+
+<footer>
+	<div class="footer-container">
+		<p class="hellu">Hellu World?</p>
+
+		<div class="social-info">
+			<div>
+				<p>Explore</p>
+				<ul>
+					<li><a href="index.html">Homepage</a></li>
+					<li><a href="jobs.html">Job Description</a></li>
+					<li><a href="apply.html">Application</a></li>
+				</ul>
+			</div>
+
+			<div>
+				<p>Our Company</p>
+				<ul>
+					<li><a href="about.html">About Us</a></li>
+				</ul>
+			</div>
+
+			<div>
+				<p>Contact Via</p>
+				<ul>
+					<li>Email: <a href="mailto:helluworld?@gmail.com">helluworld?@gmail.com</a></li>
+					<li>Phone: (+84) 70 369 5178</li>
+					<li>
+						Address:
+						<span class="address">A35 Bach Dang,<br>
+						Tan Son Hoa Ward,<br>
+						Ho Chi Minh City</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="extra-info">
+			<p class="copyright">© 2025 Hellu World?. All Rights Reserved</p>
+			<div class="links">
+				<a href="https://bkngoc110407.atlassian.net/jira/software/projects/SCRUM/boards/1?atlOrigin=eyJpIjoiNGNjZjE1MDkzYTYxNDEwNmI3Nzc5MjdhMzRmZGRmMjQiLCJwIjoiaiJ9" target="_blank">
+					<i class="fa-brands fa-jira"></i> Jira
+				</a>
+				<a href="https://github.com/WebTechnologyProject-Sep2025/projectpart1-groupass1-1-cos10026-2-group1.git" target="_blank">
+					<i class="fa-brands fa-github"></i> GitHub
+				</a>
+			</div>
+		</div>
+	</div>
+</footer>
+
