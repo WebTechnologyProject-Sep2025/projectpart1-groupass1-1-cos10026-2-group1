@@ -182,7 +182,7 @@
 
 /* ======== Section 3 ======== */
 #about-page .section3 {
-	background: url('../assets/image/about2.jpeg') center/cover no-repeat;
+	background: url('../styles/images/about2.jpeg') center/cover no-repeat;
 	padding: 6.94vw 0;
 	text-align: center;
 	color: white;
